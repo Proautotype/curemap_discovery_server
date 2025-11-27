@@ -11,7 +11,7 @@
 	<groupId>com.custard</groupId>
 	<artifactId>eurekaserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eurekaserver</name>
+	<name>curemap-eurekaserver</name>
 	<description>Eureka server for CureMap microservices</description>
 	<url/>
 	<licenses>
@@ -68,6 +68,25 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.5</version>
+                <configuration>
+                    <from>
+                        <image>maven:3.9.4-eclipse-temurin-21</image>
+                    </from>
+                    <to>
+                        <image>winstyngyen/${project.name}:v1</image>
+                    </to>
+                    <container>
+                        <mainClass>com.generis.Application</mainClass>
+                        <ports>
+                            <port>8080</port>
+                        </ports>
+                    </container>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
